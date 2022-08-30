@@ -15,30 +15,49 @@
     <main>
         <section class = "controls">
             <div>
-                <label for="bgColor">Background-Color
-                     <input id="bgColor" type ="color">
+                <label for="bgColor">
+                     <input id="bgColor" type ="color" value="white">
+                     Background-Color
                 </label>
-                <p>Select your Pen color</p>
+                <br>
+                <p>Toggle your Pen color</p>
                 <label for="yourChoice" >
                     <input type="radio" name="penColor" id="yourChoice">
-                    Choose a Custom Color
-                    <input type="color"> 
+                    <input type="color">
+                    Custom Color
                 </label>
+                <br>
                 <label for="blackChoice">
                     <input type="radio" name="penColor" id="blackChoice">Black
                 </label>
+                <br>
                 <label for="rgbChoice">
                     <input type ="radio" name="penColor" id="rgbChoice">Multi-Color
                 </label>
+                <br>
                 <label for="grayscale">
                     <input type ="radio" name="penColor" id="grayscale">Grayscale
                 </label>
+                <br>
+                <label for="eraser">
+                    <input type="radio" name="penColor" id="eraser">Eraser
+                </label>
+                <br>
+                <label for="lighten">
+                    <input type="radio" name="penColor" id="lighten">Lighten
+                </label>
+                <br>
+                <label for="shading">
+                    <input type="radio" name="penColor" id="shading">Shading
+                </label>
             </div>
             <div>
-                <p id="boxSize"></p>
-                <label for="gridSize">Grid-Size <input type="range" id="gridSize" min="1" value="16" max="100"></label>
+                <label for="gridSize">Grid-Size<p id="boxSize"></p>
+                    <br>
+                    <input type="range" id="gridSize" min="1" value="16" max="100"></label>
             </div>
             <div>
+                <button id="lines">Grid Lines</button>
                 <button id="reset">Reset</button>
             </div>
         </section>
@@ -47,5 +66,8 @@
             </div>
         </section>
     </main>
+    <footer>
+        <p><i>Etch-Da-Sketch</i> &copy 2022</p>
+    </footer>
 </body>
 </html>
