@@ -1,7 +1,7 @@
 *{
     margin:0;
-    box-sizing: border-box;
     vertical-align: center;
+    box-sizing: border-box;
 }
 body{
     background-color: #293241;
@@ -17,20 +17,27 @@ h1{
     color:#E0FBFC;
     font-size: 3em;
 }
-label{
-    
+.box{
+    padding: 0;
+    margin: 0;
+    border: 0.5px solid ;
 }
 main{
     display: flex;
     justify-content: space-evenly;
 }
 .content{
-    width: 50vw;
     background-color:#3D5A80;
     border:2px solid #98C1D9;
+    padding: 20px;
+    display: block;
+    width: 50vw;
 }
 .container{
-    background-color: white;
+    background-color: black;
+    display: flex;
+    flex-flow: row wrap;
+    height: 100%;
 }
 .controls{
     width: 20vw;
