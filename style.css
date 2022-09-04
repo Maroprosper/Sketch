@@ -20,10 +20,11 @@ h1{
 .box{
     padding: 0;
     margin: 0;
+    border: none;
 }
 .divbox{
-    border-bottom: 0.005px solid #98c1d9;
-    border-right: 0.005px solid #98c1d9;
+    border-bottom: 0.01px solid #98c1d9;
+    border-right: 0.01px solid #98c1d9;
 }
 main{
     display: flex;
@@ -35,6 +36,7 @@ main{
     padding: 20px;
     display: block;
     width: 50vw;
+    height: 90vh;
 }
 span{
     font-size: 10px;
@@ -48,11 +50,14 @@ span{
 .container{
     background-color: #000000;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow:row wrap;
     height: 100%;
+    width: 100%;
+    gap: 0;
 }
 .controls{
     width: 20vw;
+    height: 90vh;
     background-color: #3D5A80;
     padding: 30px;
     display: flex;
