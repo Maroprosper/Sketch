@@ -1,6 +1,6 @@
 let sketch = document.querySelector(".container");
-let width = sketch.offsetWidth;
-let height = sketch.offsetHeight;
+let width = Math.floor(sketch.clientWidth);
+let height = Math.floor(sketch.clientHeight + 31);
 let size = document.getElementById('gridSize').value;
 let length = height/size;
 let breadth = width/size;
@@ -14,10 +14,10 @@ document.getElementById('boxSize').textContent = `${size} x ${size}`;
         div.style.height = `${length}px`;
         div.style.width = `${breadth}px`;
         sketch.appendChild(div);
-        div.classList.toggle("box");
+        div.classList.add("box");
         }
     }
-    document.getElementById('gridSize').addEventListener('change', (e) => {
+    document.getElementById('gridSize').addEventListener('input', (e) => {
         let div = document.querySelectorAll('.box');
         for(let k = 0; k < div.length; k++){
          sketch.removeChild(div[k]);
@@ -36,7 +36,7 @@ document.getElementById('lines').textContent = 'Show Grid';
          div.style.height = `${length}px`;
          div.style.width = `${breadth}px`;
          sketch.appendChild(div);
-         div.classList.toggle("box");
+         div.classList.add("box");
          }
      }
      

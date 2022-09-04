@@ -20,11 +20,10 @@ h1{
 .box{
     padding: 0;
     margin: 0;
-    border: none;
 }
 .divbox{
-    border-bottom: 0.01px solid #98c1d9;
-    border-right: 0.01px solid #98c1d9;
+    border-bottom: 0.5px solid #98c1d9;
+    border-right: 0.5px solid #98c1d9;
 }
 main{
     display: flex;
@@ -33,10 +32,9 @@ main{
 .content{
     background-color:#3D5A80;
     border:2px solid #98C1D9;
-    padding: 20px;
+    padding: 30px;
     display: block;
     width: 50vw;
-    height: 90vh;
 }
 span{
     font-size: 10px;
@@ -54,10 +52,11 @@ span{
     height: 100%;
     width: 100%;
     gap: 0;
+    border-left: 0.5px solid #98c1d9;
+    border-top: 0.5px solid #98c1d9;
 }
 .controls{
     width: 20vw;
-    height: 90vh;
     background-color: #3D5A80;
     padding: 30px;
     display: flex;
