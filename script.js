@@ -1,26 +1,55 @@
 let sketch = document.querySelector(".container");
 let width = sketch.clientWidth;
 let height = sketch.clientHeight;
-let size = document.querySelector("#gridSize").value;
+let size = document.getElementById('gridSize').value;
 let length = height/size;
 let breadth = width/size;
 let color = '';
-for(let i = 0; i < size; i++){
-    for(let j = 0; j < size; j++){
-    let div = document.createElement('div');
-    div.style.height = `${length}px`;
-    div.style.width = `${breadth}px`;
-    sketch.appendChild(div);
-    div.classList.add("box");
+document.getElementById('boxSize').textContent = `${size} x ${size}`;
+       length = height/size;
+       breadth = width/size;
+       for(let i = 0; i < size; i++){
+        for(let j = 0; j < size; j++){
+        let div = document.createElement('div');
+        div.style.height = `${length}px`;
+        div.style.width = `${breadth}px`;
+        sketch.appendChild(div);
+        div.classList.add("box");
+        }
     }
+    document.getElementById('gridSize').addEventListener('change', (e) => {
+        let div = document.querySelectorAll('.box');
+        for(let k = 0; k < div.length; k++){
+         sketch.removeChild(div[k]);
+        }
+        let options = document.querySelectorAll('input[type="radio"]');
+for(let option of options){
+    option.checked = 'false';
 }
+document.getElementById('lines').textContent = 'Show Grid';
+        size = e.target.value;
+        length = height/size;
+        breadth = width/size;
+        for(let i = 0; i < size; i++){
+         for(let j = 0; j < size; j++){
+         let div = document.createElement('div');
+         div.style.height = `${length}px`;
+         div.style.width = `${breadth}px`;
+         sketch.appendChild(div);
+         div.classList.add("box");
+         }
+     }
+     
+     document.getElementById('boxSize').textContent = `${size} x ${size}`;
+    });
 let background = document.getElementById('bgColor');
 background.addEventListener('input' , (e) => {
     sketch.style.backgroundColor = background.value;
 });
+function draw(){
 let options = document.querySelectorAll('input[type="radio"]');
 for(let option of options){
-    option.addEventListener('click', () => {
+    option.addEventListener('input', () => {
       switch(true){
         case option.checked && option.id === "yourChoice":
                 document.getElementById('yourColor').addEventListener('input', (e) => {
@@ -30,7 +59,7 @@ for(let option of options){
                 etch(document.getElementById('yourColor').value);
             break;
         case option.checked && option.id === "blackChoice":
-            color = "black";
+            color = "#000000";
             etch(color);
             break;
         case option.checked && option.id === "rgbChoice":
@@ -59,21 +88,17 @@ for(let option of options){
         }
         let boxes = document.querySelectorAll('.box');
         boxes.forEach(box => {box.addEventListener('mouseover', (e) =>  {
-                  e.target.style.backgroundColor = getGrey();
+                  box.style.backgroundColor = getGrey();
             });
     });
         break;
         case option.checked && option.id === "eraser":
-            background.addEventListener('input' , (e) => {
-                color = background.value;
-                etch(color);
-            });
+            color = '';
             etch(color);
         break;
-        case option.checked && option.id === "lighten":
-            
-      }      
-   });
+}
+});   
+}
 }
 function etch(color){
     let divs = document.querySelectorAll('.box');
@@ -82,3 +107,16 @@ function etch(color){
         });
 });
 }
+draw();
+document.getElementById('lines').addEventListener('click', () => {
+        document.querySelectorAll('.box').forEach(item => {
+        item.classList.toggle('divbox');
+    });
+    if(document.getElementById('lines').textContent === 'Show Grid'){
+        document.getElementById('lines').textContent = 'Hide Grid';
+    }
+    else if(document.getElementById('lines').textContent === 'Hide Grid'){
+        document.getElementById('lines').textContent = 'Show Grid';
+    }
+});
+document.getElementById('reset').addEventListener('click', () => {history.go(0);});

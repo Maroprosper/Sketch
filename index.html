@@ -44,20 +44,24 @@
                 </label>
                 <br>
                 <label for="lighten">
-                    <input type="radio" name="penColor" id="lighten">Lighten
+                    <input type="radio" name="penColor" id="lighten" disabled>
+                    Lighten<span><s><sup><i>COMING SOON</i></sup></s></span>
                 </label>
                 <br>
                 <label for="shading">
-                    <input type="radio" name="penColor" id="shading">Shading
+                    <input type="radio" name="penColor" id="shading" disabled>
+                    Shading<span><s><sup><i>COMING SOON</i></sup></s></span>
                 </label>
             </div>
             <div>
-                <label for="gridSize">Grid-Size<p id="boxSize"></p>
+                <label for="gridSize">Grid-Size :
                     <br>
-                    <input type="range" id="gridSize" min="1" value="16" max="100"></label>
+                    <input type="range" id="gridSize" min="1" value="16" max="100">
+                </label>
+                <p id="boxSize"></p>
             </div>
             <div>
-                <button id="lines">Grid Lines</button>
+                <button id="lines">Show Grid</button>
                 <button id="reset">Reset</button>
             </div>
         </section>
@@ -67,7 +71,7 @@
         </section>
     </main>
     <footer>
-        <p><i>Etch-Da-Sketch</i> &copy 2022</p>
+        <p><i>Etch-Da-Sketch</i> <sup>&copy</sup> 2022</p>
     </footer>
 </body>
 </html>
