@@ -1,6 +1,6 @@
 let sketch = document.querySelector(".container");
 let width = sketch.clientWidth;
-let height = Math.floor(sketch.clientHeight + 31);
+let height = sketch.clientHeight;
 let size = document.getElementById('gridSize').value;
 let length = height/size;
 let breadth = width/size;
